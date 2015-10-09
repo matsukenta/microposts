@@ -1,0 +1,28 @@
+<%= form_for(@user) do |f| %>
+    <!-- 部分テンプレート読み込み -->
+    <%= render 'shared/error_messages', object: f.object %>
+            
+    <!-- 名前フォーム -->
+    <%= f.label :name , "名前" %>
+    <%= f.text_field :name, class: 'form-control' %>
+
+    <!-- emailフォーム -->            
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email, class: 'form-control' %>
+
+    <!-- 地域フォーム -->            
+    <%= f.label :area, "地域" %>
+    <%= f.text_field :area, class: 'form-control' %>
+    <%# f.collection_select :area, JpPrefecture::Prefecture.all, :code, :name, class: 'form-control' %>
+            
+    <!-- パスワードフォーム -->
+    <%= f.label :password, "パスワード" %>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <!-- パスワード確認フォーム -->
+    <%= f.label :password_confirmation, "パスワード（確認用）" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+    <!-- ボタンフォーム -->
+    <%= f.submit "Create my account", class: "btn btn-primary" %>
+<% end %>
