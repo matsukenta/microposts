@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+    include JpPrefecture
+    jp_prefecture :area
 
     before_save { self.email = email.downcase }
     validates :name, presence: true, length: { maximum: 50 }
@@ -7,7 +9,5 @@ class User < ActiveRecord::Base
                       format: { with: VALID_EMAIL_REGEX },
                       uniqueness: { case_sensitive: false }
     has_secure_password
-    
-    include JpPrefecture
-    jp_prefecture :area
+    has_many :microposts
 end
