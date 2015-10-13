@@ -13,7 +13,7 @@
 
             <%= f.label :area, "地域" %>
             <%# f.select :area, [["Railsの基礎","rails_base"],["Rubyの基礎","ruby_base"]], :include_blank => true, class: 'form-control' %>
-            <%= f.collection_select :area, JpPrefecture::Prefecture.all, :code, :name, :include_blank => true, class: 'form-control' %>
+            <%= f.collection_select :area, JpPrefecture::Prefecture.all, :code, :name, { :include_blank => true},{ :class => "form-control"} %>
 
             <%= f.label :phone_number, "電話番号" %>
             <%= f.telephone_field :phone_number, class: 'form-control' %>
