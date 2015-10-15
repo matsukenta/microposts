@@ -33,6 +33,15 @@ class UsersController < ApplicationController
     end
   end
 
+  # フォローしているユーザを表示
+  def following
+    
+  end
+  
+  # フォローされているユーザを表示
+  def followers
+    
+  end
   
   private
   

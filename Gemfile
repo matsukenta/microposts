@@ -44,5 +44,10 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  # hirbの出力を日本語に対応させるgem
+  gem 'hirb-unicode'
+
+  gem 'hirb', '0.7.3'
 end
 
