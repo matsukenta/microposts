@@ -1,0 +1,13 @@
+<li id="following-<%= following.id %>">
+    <%= link_to gravatar_for(following, size: 50), following %>
+    <span class="user">
+        <%= link_to following.name, following %>
+    </span>
+    <span class="content">
+        Profile:<%= following.profile %>
+    </span>
+    <span class="timestamp">
+        e-mail:
+        <%= following.email %>
+    </span>
+</li>

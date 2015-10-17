@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy, :following, :followers]
   
   def show
     @user = User.find(params[:id])
@@ -35,12 +35,12 @@ class UsersController < ApplicationController
 
   # フォローしているユーザを表示
   def following
-    
+    @followings = @user.following_users
   end
   
   # フォローされているユーザを表示
   def followers
-    
+    @followers = @user.follower_users 
   end
   
   private
