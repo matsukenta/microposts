@@ -49,5 +49,12 @@ group :development, :test do
   gem 'hirb-unicode'
 
   gem 'hirb', '0.7.3'
+  
+  # debug補助ツール
+  gem 'pry-byebug', group: :development
+  
+  # ER図作成ツール
+  gem 'rails-erd'
+  
 end
 
