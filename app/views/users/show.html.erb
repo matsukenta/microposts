@@ -25,9 +25,9 @@
                 <br />
                 <ol class="microposts">
                     <%= render @microposts %>
-                    <%# @microposts.inspect %>
                 </ol>
             <% end %>
+            <%= paginate @microposts, outer_window: 5 %>
         </div>
     </div>
 </div>

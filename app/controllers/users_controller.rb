@@ -3,19 +3,24 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts
+    @microposts = @user.microposts.page(params[:page]).order(created_at: :desc).per(5)
   end
   
+  # @userインスタンスをUserクラスを用いて生成
   def new
     @user = User.new
   end
   
+  # Userモデルを送られてきた（user_params）で作成して@userに格納
+  # dbに登録できたら、welcome to the Sample App!を表示し、
   def create
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to the Sample App!"
+      # slack確認中
       redirect_to @user
     else
+      # user viewのnew.html.erbを参照
       render 'new'
     end
   end

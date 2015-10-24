@@ -1,3 +1,4 @@
+<!-- micropostsの全体で使用するHTMLのレイアウト -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,12 +8,18 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <!-- layoutsフォルダのパーシャルheaderを呼び出している -->
     <%= render 'layouts/header' %>
+    
     <div class="container">
+      <!-- messageを受け取ったときに、flashで表示できるようにしている。 -->
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
+      
+      <!-- yieldで各ページの部分テンプレート（erbファイル）を読み込む -->
       <%= yield %>
+      
     </div>
   </body>
 </html>

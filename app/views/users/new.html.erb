@@ -1,8 +1,11 @@
+<!-- usersコントローラーのnewアクションが実行されたら、表示する。-->
 <h1>Sign up</h1>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
+        <!-- usersコントローラーのnewアクションで生成した@userの情報をformを利用して格納する。 -->
         <%= form_for(@user) do |f| %>
+            <!-- 新規登録に失敗した場合のエラー表示 -->
             <%= render 'shared/error_messages', object: f.object %>
             
             <%= f.label :name %>
