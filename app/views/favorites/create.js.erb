@@ -1,1 +1,1 @@
-$("#favorite_form").html("<%= escape_javascript(render('users/unfavorit')) %>");
+$("#favorite_form").html("<%= escape_javascript(render partial: 'users/unfavorite', locals: {unfavorite_micropost: current_micropost}) %>");

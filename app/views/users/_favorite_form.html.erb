@@ -1,0 +1,10 @@
+<% if current_user.id != current_micropost.user_id %>
+    <div id="favorite_form">
+        <%# binding.pry %>
+        <% if current_user.favoriting?(current_micropost) %>
+            <%= render partial: 'users/unfavorite', locals: {unfavorite_micropost: current_micropost} %>
+        <% else %>
+            <%= render partial: 'users/favorite', locals: {favorite_micropost: current_micropost} %>
+        <% end %>
+    </div>
+<% end %>

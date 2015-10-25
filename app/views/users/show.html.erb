@@ -27,7 +27,8 @@
                     <%= render @microposts %>
                 </ol>
             <% end %>
-            <%= paginate @microposts, outer_window: 5 %>
-        </div>
+            <%= paginate @microposts %>
+        </div
+        <%# binding.pry %>
     </div>
 </div>
