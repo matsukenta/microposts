@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy, :following, :followers]
+  before_action :set_user, only: [:edit, :update, :destroy, :following, :followers, :favorites]
   
   def show
     @user = User.find(params[:id])
@@ -47,6 +47,12 @@ class UsersController < ApplicationController
   def followers
     @followers = @user.follower_users 
   end
+  
+  # お気に入りされている投稿を表示
+  def favorites
+    @favorites = @user.favoriting_microposts.page(params[:page]).order(created_at: :desc).per(5)
+  end
+  
   
   private
   

@@ -17,6 +17,7 @@
             <li class="active"><a href="<%= user_path %>">Microposts (<%= @user.microposts.count %>)</a></li>
             <li><a href="<%= following_user_path %>">Following (<%= @user.following_users.count %>)</a></li>
             <li><a href="<%= followers_user_path %>">Followers (<%= @user.follower_users.count %>)</a></li>
+            <!-- <li><a href="<%# favorites_user_path %>">Favorite (<%# @user.favoriting_favorites.count %>)</a></li> -->
         </ul>
 
         <div class="tab-content">

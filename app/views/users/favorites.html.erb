@@ -18,15 +18,17 @@
             <li><a href="<%= user_path %>">Microposts (<%= @user.microposts.count %>)</a></li>
             <li><a href="<%= following_user_path %>">Following (<%= @user.following_users.count %>)</a></li>
             <li><a href="<%= followers_user_path %>">Followers (<%= @user.follower_users.count %>)</a></li>
-            <li class="active"><a href="<%= favorites_path %>">Favorite (<%= @user.favorite_microposts.count %>) </a></li>
+            <li class="active"><a href="<%= favorites_user_path %>">Favorite (<%= @user.favoriting_favorites.count %>)</a></li>
         </ul>
 
         <div class="tab-content">
             <!-- お気に入り投稿の一覧表示 -->
-            <% if @user.user_favorites.any? %>
+            <% if @user.favoriting_favorites.any? %>
                 <br />
                 <ol class="microposts">
-                    <%= render partial: 'users/favorite', collection: @favorites %>
+                    <%# binding.pry %>
+                    <%# render partial: 'users/favorite', collection: @favorites %>
+                    <%= render partial: 'users/favorite_form', locals: {current_micropost: @favorites} %>
                     <%# @followers.inspect %>
                 </ol>
             <% end %>

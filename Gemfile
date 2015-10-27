@@ -38,6 +38,9 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'jp_prefecture'
 
+# ページネーション
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -58,9 +61,6 @@ group :development, :test do
   
   # ER図作成ツール
   gem 'rails-erd'
-  
-  # ページネーション
-  gem 'kaminari'
   
 end
 
